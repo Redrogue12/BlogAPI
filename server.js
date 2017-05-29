@@ -28,15 +28,15 @@ app.post('/blog-posts', jsonParser, (req, res) => {
         }
     }
 
-    const item = BlogPosts.create(req.body.)
-})
+    const item = BlogPosts.create(req.body.title, req.body.content, req.body.author, req.body.publishDate);
+    res.status(201).json(item);
+});
 
-
-
-
-
-
-
+app.delete('/blog-posts/:id', (req, res) => {
+    BlogPosts.delete(req.params.id);
+    console.log(`Deleted blog post \`${req.params.title}\``);
+    res.status(204).end();
+});
 
 app.listen(process.env.PORT || 8080, () => {
     console.log(`Your app is listening on port ${process.env.PORT || 8080}`);
