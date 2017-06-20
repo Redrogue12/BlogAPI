@@ -4,7 +4,7 @@
   "description": "Blog API",
   "main": "server.js",
   "scripts": {
-    "test": "mocha ./test",
+    "test": "mocha",
     "start": "node server.js"
   },
   "author": "",
