@@ -14,7 +14,6 @@ app.use(morgan('common'));
 
 app.use('/blog-posts', blogPostsRouter);
 
-SERVER
 
 let server;
 
