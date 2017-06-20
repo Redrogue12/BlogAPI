@@ -30,7 +30,18 @@ function runServer() {
   });
 }
 
-
+function closeServer() {
+  return new Promise((resolve, reject) => {
+    console.log('Closing server');
+    server.close(err => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      resolve();
+    });
+  });
+}
 
 // app.listen(process.env.PORT || 8080, () => {
 //     console.log(`Your app is listening on port ${process.env.PORT || 8080}`);
