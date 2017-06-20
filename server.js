@@ -14,6 +14,24 @@ app.use(morgan('common'));
 
 app.use('/blog-posts', blogPostsRouter);
 
-app.listen(process.env.PORT || 8080, () => {
-    console.log(`Your app is listening on port ${process.env.PORT || 8080}`);
-});
+// SERVER
+
+let server;
+
+function runServer() {
+  const port = process.env.PORT || 8080;
+  return new Promise((resolve, reject), {
+    server = app.listen(port, () => {
+      console.log(`Your app is listening on port ${port}`);
+      resolve(server);
+    }).on('error', err => {
+      reject(err)
+    });
+  });
+}
+
+
+
+// app.listen(process.env.PORT || 8080, () => {
+//     console.log(`Your app is listening on port ${process.env.PORT || 8080}`);
+// });
