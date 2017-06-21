@@ -4,8 +4,8 @@
   "description": "Blog API",
   "main": "server.js",
   "scripts": {
-    "test": "mocha",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "mocha ./test"
   },
   "author": "",
   "license": "ISC",
