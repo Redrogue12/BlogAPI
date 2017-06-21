@@ -78,6 +78,7 @@ describe('Blog API', function() {
     return chai.request(app)
       .get('/blog-posts')
       .then(function(res) {
+        return chai.request(app)
         .delete(`/blog-posts/${res.body[0].id}`);
       })
       .then(function(res) {
