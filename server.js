@@ -25,7 +25,7 @@ function runServer() {
       resolve(server);
     }).on('error', err => {
       reject(err)
-    });
+    })
   });
 }
 
