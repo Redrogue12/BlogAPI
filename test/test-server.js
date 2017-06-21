@@ -49,4 +49,4 @@ describe('Blog API', function() {
     });
   });
 
-})
+});
