@@ -49,4 +49,29 @@ describe('Blog API', function() {
     });
   });
 
+  it('should update items on PUT', function() {
+
+    const updateData = {
+      title: 'foo',
+      content: 'another kind of content',
+      author: 'another author'
+    };
+
+    return chai.request(app)
+      .get('/blog-posts')
+      .then(function(res) {
+        updateData.id = res.body[0].id;
+
+        return chai.request(app)
+          .put(`/blog-posts/${updateData.id}`)
+          .send(updateData);
+      })
+      .then(function(res) {
+        res.should.have.status(200);
+        res.should.be.json;
+        res.body.should.be.a('object');
+        res.body.should.deep.equal(updateData);
+      });
+  });
+
 });
