@@ -74,4 +74,15 @@ describe('Blog API', function() {
       });
   });
 
+  it('should delete items on DELETE', function() {
+    return chai.request(app)
+      .get('/blog-posts')
+      .then(function(res) {
+        .delete(`/blog-posts/${res.body[0].id}`);
+      })
+      .then(function(res) {
+        res.should.have.status(204);
+      });
+  });
+
 });
