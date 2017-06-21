@@ -37,15 +37,15 @@ describe('Blog API', function() {
   it('should create new blog post on POST', function() {
     const newItem = {title: 'some title', content: 'some content', author: 'some author'};
     return chai.request(app)
-    .post('/blog-posts')
-    .send(newItem)
-    .then(function(res) {
-      res.should.have.status(201);
-      res.should.be.json;
-      res.body.should.be.a('object');
-      res.body.should.include.keys('id', 'title', 'content', 'author');
-      res.body.should.not.be.null;
-      res.body.id.should.deep.equal(Object.assign(newItem, {id: res.body.id}));
+      .post('/blog-posts')
+      .send(newItem)
+      .then(function(res) {
+        res.should.have.status(201);
+        res.should.be.json;
+        res.body.should.be.a('object');
+        res.body.should.include.keys('id', 'title', 'content', 'author');
+        res.body.should.not.be.null;
+        res.body.id.should.deep.equal(Object.assign(newItem, {id: res.body.id}));
     });
   });
 
