@@ -7,6 +7,7 @@ const {BlogPosts} = require('./models');
 
 // Sample posts created
 BlogPosts.create('My first post', 'Some stuff', 'Edgar');
+BlogPosts.create('My second post', 'Some other stuff', 'Some other guy');
 
 router.get('/', (req, res) => {
     res.json(BlogPosts.get());
