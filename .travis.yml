@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: nNa874Oubz+S+zAX5nz++fINV0Y03G+jAEd5WgznFsbKfb1IjBnj3Y1XPLmQ8Z4nw0YJAHyjXVGLaWLAfDmVOBScqOT3/0awSi1wkSdtVHC4rcC52+yGA5E4WWNeGQQQ9UrTvs9XETuDl/imVOAEhxea3MvaoUZ7BebC0CeBCApvq0a3dNL7XRh0gEOvTXgpwakxPfpTDfbNB6FvpxH1/EH0XAF0wIMIb5lHm2jZJlXGYTHIMNqgPxc8nw/IZcKkBtD/TXo6I5+WE0S+kWE6GwtTUOwBXkobIZU9iJUFNQcKza/1pYvd3D0SI0krSmFwTNkzeD4n8bnimgM3F44eNIWdFH3l/EvtHkfKoALeTSBczlXwAotDOYLCYUjjzm7ucWtxZgWpbc1Q49CnCL6BxDxQgNOHQnv9d1+dH9r2tlL9joWyIkFEXhqf63iKzTr5hNrvSYmVwDTZAeKMZ0TN+I8qkqFXWcAOXOnAxuP4YlUMbZmSPeGyLPZAUGPE25XbqNtiuUlbHZccH4/+acmFxu/CSFCKMnKfsJf2ulAi0VdOGpmAjZgWD6z0VbZqZ+uil/YjppmT2VHcgLexvuR6Tf/4FD6+S2jwPzbd0KYpUI58nQZxfrHf8lAgOG81HJVXMHkhb/a0xwtKtJxh5Rr/vWM0hZz9eHxE0dFXmzIgKPw=
+  app: fathomless-castle-53925
+  on:
+    repo: Redrogue12/BlogAPI
