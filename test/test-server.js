@@ -26,7 +26,7 @@ describe('Blog API', function() {
         res.body.should.be.a('array');
         // res.body.should.be.at.least(1);
 
-        const expectedKeys = ['id', 'title', 'content', 'author'];
+        const expectedKeys = ['title', 'content', 'author'];
         res.body.forEach(function(item) {
           item.should.be.a('object');
           item.should.include.keys(expectedKeys);
@@ -41,11 +41,10 @@ describe('Blog API', function() {
       .send(newItem)
       .then(function(res) {
         res.should.have.status(201);
+        res.body.should.not.be.null;
         res.should.be.json;
         res.body.should.be.a('object');
-        res.body.should.include.keys('id', 'title', 'content', 'author');
-        res.body.should.not.be.null;
-        // res.body.id.should.deep.equal(Object.assign(newItem, {id: res.body.id}));
+        res.body.should.include.keys('title', 'content', 'author');
     });
   });
 
@@ -67,7 +66,7 @@ describe('Blog API', function() {
           .send(updateData);
       })
       .then(function(res) {
-        res.should.have.status(204);
+        res.should.have.status(200);
         res.should.be.json;
         res.body.should.be.a('object');
         res.body.should.deep.equal(updateData);
