@@ -29,7 +29,7 @@ router.post('/', jsonParser, (req, res) => {
 });
 
 router.put('/:id', jsonParser, (req, res) => {
-    const requiredFields = ['title', 'content', 'author'];
+  const requiredFields = ['title', 'content', 'author'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -46,14 +46,14 @@ router.put('/:id', jsonParser, (req, res) => {
       return res.status(400).send(message);
   }
   console.log(`Updating blog post item \`${req.params.id}\``);
-  BlogPosts.update({
-      id: req.params.id,
-      title: req.body.title,
-      content: req.body.content,
-      author: req.body.author,
-      publishDate: req.body.publishDate
+  const updatedItem =  BlogPosts.update({
+        id: req.params.id,
+        title: req.body.title,
+        content: req.body.content,
+        author: req.body.author,
+        publishDate: req.body.publishDate
   });
-  res.status(200).end();
+  res.json(updatedItem);
 });
 
 router.delete('/:id', (req, res) => {
